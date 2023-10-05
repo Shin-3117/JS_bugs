@@ -28,10 +28,10 @@ console.log(a) // undefined</pre></code>
 </li>
 
 <li><p>값을 대입하지 않은 변수</p>
-<code><div>
+<pre>
 let b
 console.log(b) // undefined
-</div></code>
+</pre>
 </li>
 
 <li><p>객체 내부의 존재하지 않는 프로퍼티에 접근</p>
