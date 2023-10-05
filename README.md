@@ -23,10 +23,12 @@ typeof null === “null” 제안이 있었지만, 기존 사이트 손상으로
 <div markdown="1">
 <ol>
 <li><p>undefined로 명시적으로 지정한 경우</p>
-<code><pre>
+<pre>
+<code>
 let a = undefined
 console.log(a) // undefined
-</pre></code>
+</code>
+</pre>
 </li>
 
 <li><p>값을 대입하지 않은 변수</p>
