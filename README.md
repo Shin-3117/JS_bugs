@@ -53,3 +53,22 @@ console.log(d) // undefined
 </ol>
 </div>
 </details>
+
+<details>
+<summary style="font-size:x-large">실행 컨택스트 (execution context )</summary>
+<div markdown="1">
+<p>실행할 코드에 제공할 환경 정보들을 모아놓은 객체</p>
+<hr>
+<p>실행 컨텍스트가 활성화될 때, 
+자바스크립트 엔진이 해당 컨택스트에 관련된 코드들을 실행하는 데 필요한
+환경 정보들을 수집해서 실행 컨텍스트 객체에 저장</p>
+<ol>
+<li><p>VariableEnvironment</p>
+</li>
+<li><p>LexicalEnvironment</p>
+</li>
+<li><p>ThisBinding</p>
+</li>
+</ol>
+</div>
+</details>
