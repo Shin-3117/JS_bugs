@@ -1,3 +1,4 @@
+//! data type에 따른 typeof
 console.log('---Primitive type---')
 // typeof(null)이 null이 아닌 object반환
 /*
