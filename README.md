@@ -24,14 +24,14 @@ typeof null === “null” 제안이 있었지만, 기존 사이트 손상으로
 <ol>
 <li><p>undefined로 명시적으로 지정한 경우</p>
 <code><pre>let a = undefined
-console.log(a) // undefined</pre>pre></code>
+console.log(a) // undefined</pre></code>
 </li>
 
 <li><p>값을 대입하지 않은 변수</p>
-<code><pre>
+<code><div>
 let b
 console.log(b) // undefined
-</pre></code>
+</div></code>
 </li>
 
 <li><p>객체 내부의 존재하지 않는 프로퍼티에 접근</p>
