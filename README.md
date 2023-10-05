@@ -1,7 +1,7 @@
 # JavaScript의 특이한 동작, 주의 사항들 정리한 저장소입니다.
 
 <details>
-<summary style="font-size:large">typeof null === 'object'</summary>
+<summary style="font-size:x-large">typeof null === 'object'</summary>
 <div markdown="1">
 typeof(null)이 null이 아닌 object반환
 <hr>
@@ -15,5 +15,41 @@ null은 Null pointer(대부분의 플랫폼에서 0x00)로 표시되었습니다
 따라서 typeof는 object를 반환합니다.
 
 typeof null === “null” 제안이 있었지만, 기존 사이트 손상으로 거부되었습니다.
+</div>
+</details>
+
+<details>
+<summary style="font-size:x-large">undefined가 할당되는 경우</summary>
+<div markdown="1">
+<ol>
+<li><p>undefined로 명시적으로 지정한 경우</p>
+<code><pre>
+let a = undefined
+console.log(a) // undefined
+</pre></code>
+</li>
+
+<li><p>값을 대입하지 않은 변수</p>
+<code><pre>
+let b
+console.log(b) // undefined
+</pre></code>
+</li>
+
+<li><p>객체 내부의 존재하지 않는 프로퍼티에 접근</p>
+<code><pre>
+let c = {c1:1}
+console.log(c.notHere) // undefined
+</pre></code>
+</li>
+
+<li><p>return문이 없거나 호출되지 않는 함수의 실행 결과</p>
+<code><pre>
+let func = function(){};
+let d = func()
+console.log(d) // undefined
+</pre></code>
+</li>
+</ol>
 </div>
 </details>
