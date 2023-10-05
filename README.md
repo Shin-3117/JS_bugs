@@ -23,8 +23,7 @@ typeof null === “null” 제안이 있었지만, 기존 사이트 손상으로
 <div markdown="1">
 <ol>
 <li><p>undefined로 명시적으로 지정한 경우</p>
-<pre><code>
-let a = undefined
+<pre><code>let a = undefined
 console.log(a) // undefined
 </code></pre>
 </li>
