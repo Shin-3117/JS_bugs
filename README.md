@@ -63,8 +63,14 @@ console.log(d) // undefined
 환경 정보들을 수집해서 실행 컨텍스트 객체에 저장</p>
 <ol>
 <li><p>VariableEnvironment</p>
+<p>environmentRecord : 매개변수명, 변수의 식별자, 선언한 함수의 함수명 등 수집</p>
+<p>outerEnvironmentReference : 직전 컨텍스트의 LexicalEnvironment 정보를 참조</p>
+<p>실행 컨텍스트 활성화 될때, 초기 환경 정보들을 유지</p>
 </li>
 <li><p>LexicalEnvironment</p>
+<p>environmentRecord : 매개변수명, 변수의 식별자, 선언한 함수의 함수명 등 수집</p>
+<p>outerEnvironmentReference : 직전 컨텍스트의 LexicalEnvironment 정보를 참조</p>
+<p>환경 정보들을 함수 실행 도중에 변경 사항을 즉시 반영</p>
 </li>
 <li><p>ThisBinding</p>
 </li>
@@ -72,4 +78,46 @@ console.log(d) // undefined
 </div>
 </details>
 
+## 호이스팅
+environmentRecord의 수집 과정을 추상화한 개념
+
+실행 컨텍스트가 관여하는 코드 집단의 최상단으로 '끌어올린다'고 해석
+- 변수 선언과 값 할당이 동시에 이뤄진 문장은 '선언부'만 호이스팅
+- 함수 선언문과 함수 표현식의 차이 발생
 ## This
+명시적 this 바인딩이 없는 한 다음 규칙을 따릅니다.
+- 전역공간에서의 this는 전역객체(브라우저에서는 window, Node.js에서는 global) 참조합니다
+- 어떤 함수를 매서드로 호출한 경우 this는 메서드 호출 주체(메서드명 앞의 객체)를 참조합니다
+    ```
+    let func = function(x){
+        console.log(this,x);   
+    }
+    func(1) // global{ ... } , 1
+
+    const obj={
+        method : func,
+        arrowMethod : arrowFunc
+    }
+    obj.method(2) // { method: [Function: func] } 2
+    ```
+- **어떤 함수를 함수로 호출하는 경우 this는 전역객체를 참조합니다**
+    ```
+    const obj1 = {
+        outer: function(){
+            console.log(this) //{ outer: [Function: outer] }
+
+            let innerFunc = function(){
+                console.log(this)
+            }
+            innerFunc() // global
+
+            const obj2 = {
+                f:innerFunc 
+            }
+            obj2.f() //{ f: [Function: innerFunc] }
+        }
+    }
+    obj1.outer()
+    ```
+- 콜백 함수 내부에서의 this는 해당 콜백 함수의 제어권을 넘겨받은 함수가 정의한 바에 따르며, **정의하지 않은 경우 전역객체 참조합니다**
+- 생성자 함수에서의 this는 생성될 인스턴스를 참조합니다.
