@@ -1,4 +1,4 @@
-# JavaScript의 특이한 동작, 주의 사항들 정리한 저장소입니다.
+# JavaScript의 동작, 주의 사항들 정리한 저장소입니다.
 
 <details>
 <summary style="font-size:x-large">typeof null === 'object'</summary>
@@ -121,3 +121,9 @@ environmentRecord의 수집 과정을 추상화한 개념
     ```
 - 콜백 함수 내부에서의 this는 해당 콜백 함수의 제어권을 넘겨받은 함수가 정의한 바에 따르며, **정의하지 않은 경우 전역객체 참조합니다**
 - 생성자 함수에서의 this는 생성될 인스턴스를 참조합니다.
+
+## 스코프
+
+## 클로저
+
+## 프로퍼티
