@@ -23,9 +23,17 @@ user.name = 'Bella'
 console.log(user.name) // Bella
 // 삭제
 delete user.name
-console.log(user) // {key with space: true, address: 'korea', greeting: ƒ}
+console.log(user) 
+ // {key with space: true, address: 'korea', greeting: ƒ}
 
 // in 연산자
 console.log('greeting' in user) // true
 console.log('country' in user) // false
 
+const desructing_assignment = {
+  해석 : '구조분해할당',
+  a : '123'
+}
+const {해석, a} = desructing_assignment
+console.log(해석)
+console.log(a)

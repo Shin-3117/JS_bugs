@@ -28,6 +28,13 @@ console.log('정수',-1)
 console.log('유리수',1.25)
 console.log('무한대',Infinity)
 console.log('Not a Number',NaN)
+/* NaN인 경우
+1. 숫자로 읽을 수 없음
+2. 결과가 허수인 수학 계산식 | Math.sqrt(-1)
+3. 피연산자가 | NaN 7*NaN
+4. 정의할 수 없는 계산식 | 0*infinity
+5. 문자열을 포함하면서 덧셈이 아닌 계산식 | ‘가’/3
+*/
 
 const param = 'ES6 부터 지원'
 console.log(`---Template literals, ${param}---`)
