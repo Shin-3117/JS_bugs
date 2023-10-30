@@ -33,4 +33,21 @@ const c =b.map((e)=>{
     return e*2
 })
 console.log(c)
-console.log(a.filter((e)=>{if(e%2===0){return e}}).map((e)=>{return e*2}))
+console.log(a
+    .filter((e)=>{
+        if(e%2===0){
+            return e
+        }
+    })
+    .map((e)=>{
+        return e*2
+    })
+    )
+
+const newA = []
+a.reduce((acc,crr)=>{
+    if (acc%2===0){
+        newA.push(acc)
+    }
+},0)
+console.log(newA)
